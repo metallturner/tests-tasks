@@ -1,0 +1,15 @@
+public class Main {
+    public static void main(String[] args) {
+        Scanner console = new Scanner(System.in);
+        System.out.println("enter number");
+        String str = console.nextLine(); // вводим число, но вводим его не как число, а как строку
+        boolean x = true;
+        char[] array = str.toCharArray();   //преобразование строки к массиву чаров
+        for (int i = 0; i < array.length; i++) {
+            if ((array[i] != array[(array.length) - 1 - i])) {  //сравниваем первый элемент массива и последний
+                x = false;                                      //далее второй и предпоследний и тд..
+            }
+        }
+        System.out.println(x);                      // если true, то число палиндром
+    }
+}

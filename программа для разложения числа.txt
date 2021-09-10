@@ -1,0 +1,20 @@
+package com.company;
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+       Scanner num = new Scanner(System.in);
+       int x1, x, a;
+       System.out.println("введите 4 значное число");
+            x1 = num.nextInt();
+            x = x1/1000; // тут мы находим значение первого числа
+           System.out.println(x);
+           x = x1 % 1000; // тут мы находим осток от деления на 1000
+           x = x/100; // тут мы остаток дели на 100
+           System.out.println(x);
+           x = x1 % 100;
+           x = x/10;
+           System.out.println(x);
+           x = x1 % 10;
+           x = x/1;
+           System.out.println(x);

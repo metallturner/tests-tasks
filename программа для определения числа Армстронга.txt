@@ -1,0 +1,26 @@
+package com.company;
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner num = new Scanner(System.in);
+        int x1, x, a, b, c;
+        System.out.println("введите 3 значное число");
+        x1 = num.nextInt();
+        a = x1 / 100; // тут мы находим значение первого числа
+        System.out.println(a);
+        x = x1 % 100;
+        b = x / 10;
+        System.out.println(b);
+        x = x1 % 10;
+        c = x / 1;
+        System.out.println(c);
+        if ((a * a * a) + (b * b * b) + (c * c * c) == x1)
+            System.out.println("число является числом Армстронга"); // если сумма кубов сост числа равна самому числу
+
+        else
+            System.out.println("Число не является числом Армстронга");
+
+    }
+}
+

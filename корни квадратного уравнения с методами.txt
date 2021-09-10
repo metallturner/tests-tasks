@@ -1,0 +1,42 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        //квадратное уравнение имеет 2 корня, если дискриминант D > 0. 
+        //квадратное уравнение имеет 1 корень, если дискриминант D = 0.
+        //квадратное уравнение не имеет корней,(на самом деле они есть, но это "привет МатАнализ") если D<0.
+        Scanner console = new Scanner(System.in);
+        double a = console.nextInt();
+        double b = console.nextInt();
+        double c = console.nextInt();
+        System.out.println("D = " + CalcD(a, b, c)); //вызываем метод с параметрами a,b,c
+        if (CalcD(a, b, c) > 0) {
+            System.out.println("X1 = " + CalcX1(a, b, CalcD(a, b, c))); //метод CalcX1 с параметрами a,b,CalcD 
+            System.out.println("X2 = " + CalcX2(a, b, CalcD(a, b, c))); // тоже самое, только метод X1
+        } else if (CalcD(a, b, c) == 0) {
+            System.out.println("X = " + CalcX1(a, b, CalcD(a, b, c)));
+        } else if ((CalcD(a, b, c) < 0)) {
+            System.out.println("D<0, корней нет");
+        }
+
+    }
+
+    // Calc = Calculate
+    public static double CalcD(double a, double b, double c) { // метод подсчета дискриминанта
+        double D = b * b - (4 * a * c);
+        return D;
+    }
+
+    public static double CalcX1(double a, double b, double CalcD) { // метод подсчета X1
+        double X1 = (-b + Math.sqrt(CalcD)) / (2 * a);
+        return X1;
+    }
+
+    public static double CalcX2(double a, double b, double CalcD) { // метод подсчета X2
+        double X2 = (-b - Math.sqrt(CalcD)) / (2 * a);
+        return X2;
+    }
+}

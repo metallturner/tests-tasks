@@ -1,0 +1,16 @@
+package com.company;
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Main {
+
+    public static void main(String[] args) {
+    Object[] array = {13,"array", 5, 4.5, "fjfj"};
+    for(int i = 0; i< array.length;i++){
+        if( array[i] instanceof Integer || array[i] instanceof Double){
+            System.out.println("Массив содержит число, вот оно:");
+            System.out.println(array[i]);
+        }
+    }
+    }

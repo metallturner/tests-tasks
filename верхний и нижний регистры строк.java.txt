@@ -1,0 +1,11 @@
+package com.company;
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+        String name = "sweta";
+        String mane2 = name.toUpperCase(); // toLowerCase() преобразует большие в маленькие буквы
+        System.out.println(mane2);
+
+    }
+}

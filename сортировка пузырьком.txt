@@ -1,0 +1,38 @@
+package com.company;
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Main {
+    public static void sort(int[] x) {
+
+        boolean sorted = false;
+        while (!sorted) {
+            sorted = true;
+            for (int i = 0; i < x.length - 1; i++) {
+                if (x[i] > x[i + 1]) {
+                    sorted = false;
+                    int b = x[i];
+                    x[i] = x[i + 1];
+                    x[i + 1] = b;
+
+
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+
+        int[] array =new int [100];
+        for (int j = array.length-1; j>0; j--){
+            array[j] = j;
+        }
+
+        sort(array);
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+    }
+}
+
