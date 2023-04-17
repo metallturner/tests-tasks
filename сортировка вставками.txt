@@ -1,0 +1,24 @@
+import java.util.Arrays;
+
+/*
+сложность O(n^2)
+ */
+public class Main {
+    public static void main(String[] params) {
+        int[] array = new int[] {64, 42, 73, 41, 32, 53, 16, 24, 57, 42, 74, 55, 36};
+        insertionSort(array);
+        System.out.println(Arrays.toString(array));
+    }
+
+    public static void insertionSort(int[] array) {
+        for (int i = 1; i < array.length; i++) { // начинаем с 1 го элемента массива
+            int current = array[i];  // запоминаем значения элемента
+            int j = i;
+            while (j > 0 && array[j - 1] > current) {  // двигаем элементы пока либо не дойдем до начала, и элемент array[j - 1] больше текущего
+                array[j] = array[j - 1];               // перемещаем элемент вправо.
+                j--;                                   // тк идем от конца к началу то j--
+            }
+            array[j] = current;                        // вставляем элемент в освободившееся место
+        }
+    }
+    }
